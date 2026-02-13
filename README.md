@@ -132,7 +132,18 @@ Feedback pengguna digunakan untuk:
 
 ---
 
-# 📌 Development Status
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+---
+
+# 📌 Developm
+ent Status
 
 🔄 Prototype Development Stage (PKM-KC 2026)
 
