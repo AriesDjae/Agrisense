@@ -1,11 +1,11 @@
-# IrrigaPlan
+# Agrisense
 ### Agri-Comprehensive Decision Support System for Land Suitability and Irrigation Optimization
 
 ---
 
 ## 📌 Project Overview
 
-IrrigaPlan adalah sistem pendukung keputusan berbasis Machine Learning yang dirancang untuk menganalisis kesesuaian lahan dan memberikan rekomendasi irigasi optimal guna meningkatkan produktivitas pertanian berbasis data.
+Agrisense adalah sistem pendukung keputusan berbasis Machine Learning yang dirancang untuk menganalisis kesesuaian lahan dan memberikan rekomendasi irigasi optimal guna meningkatkan produktivitas pertanian berbasis data.
 
 Sistem ini mengintegrasikan data satelit, sensor lapangan, dan data historis untuk menghasilkan rekomendasi agronomis yang presisi.
 
