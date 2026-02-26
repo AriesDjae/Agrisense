@@ -12,9 +12,46 @@ import { motion } from "framer-motion";
 import { MapPin, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+type WeatherSummary = {
+  location: {
+    desa: string;
+    kecamatan: string;
+    kotkab: string;
+    provinsi: string;
+    lat: number;
+    lon: number;
+    timezone: string;
+  };
+  avgTemperature: number;
+  avgHumidity: number;
+};
 
 const Dashboard = () => {
-  const data = mockLandAnalysis;
+  const [weather, setWeather] = useState<WeatherSummary | null>(null);
+
+  useEffect(() => {
+    // Fetch real BMKG-based weather summary from the backend
+    fetch("/api/weather/diy-summary")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch weather summary");
+        return res.json();
+      })
+      .then((data: WeatherSummary) => {
+        setWeather(data);
+      })
+      .catch((err) => {
+        console.error("Weather summary error:", err);
+      });
+  }, []);
+
+  const base = mockLandAnalysis;
+  const data = {
+    ...base,
+    // Keep all other mock fields for now, but override temperature with live BMKG data when available.
+    avgTemperature: weather?.avgTemperature ?? base.avgTemperature,
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
